@@ -4,15 +4,15 @@ let mailTransporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     type: "login",
-    user: "vidlystore@gmail.com",
-    pass: "Yash@131",
+    user: "",
+    pass: "",
   },
 });
 
 function mailConfig(obj) {
 
     let mailDetails = {
-        from: "vidlystore@gmail.com",
+        from: "",
         to: obj.to,
         subject: obj.subject,
         html: obj.html,
@@ -36,7 +36,6 @@ function sendMail(data,nodemailerTransporter,res) {
       });
 }
 
-// sendMail( mailConfig("yashchouriya131@gmail.com", "test", "nodemailer test"),mailTransporter)
 
 exports.sendMail = sendMail;
 exports.mailConfig = mailConfig;
